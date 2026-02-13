@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rimjhim 💖</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body class="bg-pink-100 flex items-center justify-center h-screen transition-all duration-500">
+
+  <div id="mainCard" class="text-center bg-white p-10 rounded-3xl shadow-2xl max-w-md w-full relative">
+    
+    <img id="gif" 
+         src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" 
+         class="w-40 mx-auto mb-6 rounded-xl">
+
+    <h1 class="text-2xl font-bold mb-4 text-pink-600">
+      Rimjhim... will you be my Valentine? 💖
+    </h1>
+
+    <p class="text-gray-600 mb-6 text-sm">
+      I may not always be the most talkative person…  
+      but I promise I will always try my best  
+      to comfort you, support you,  
+      and make your life as beautiful as possible 🌸
+    </p>
+
+    <div class="flex justify-center gap-6 relative h-16">
+      <button id="yesBtn"
+        class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full transition text-lg">
+        Yes 💘
+      </button>
+
+      <button id="noBtn"
+        class="bg-gray-300 hover:bg-gray-400 text-black px-6 py-2 rounded-full transition absolute text-lg">
+        No 🙈
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const mainCard = document.getElementById("mainCard");
+    const gif = document.getElementById("gif");
+
+    // Move "No" button
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.floor(Math.random() * 250) - 125;
+      const y = Math.floor(Math.random() * 150) - 75;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    // If she clicks No
+    noBtn.addEventListener("click", () => {
+      gif.src = "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif";
+      mainCard.querySelector("h1").innerText = "Are you sure, Rimjhim? 🥺";
+    });
+
+    // If she clicks Yes
+    yesBtn.addEventListener("click", () => {
+      document.body.classList.remove("bg-pink-100");
+      document.body.classList.add("bg-pink-200");
+
+      mainCard.innerHTML = `
+        <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+             class="w-48 mx-auto mb-6 rounded-xl">
+        <h1 class="text-3xl font-bold text-pink-600 mb-4">
+          You just made me the happiest person 💕
+        </h1>
+        <p class="text-lg text-gray-700">
+          I promise I’ll keep trying every day  
+          to make you smile,  
+          even if I’m not the most communicative guy 😌💖
+        </p>
+      `;
+    });
+  </script>
+
+</body>
+</html>
