@@ -5,9 +5,7 @@
   <title>Rimjhim 💖</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      overflow: hidden;
-    }
+    body { overflow: hidden; }
   </style>
 </head>
 
@@ -19,16 +17,9 @@
          src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" 
          class="w-40 mx-auto mb-6 rounded-xl">
 
-    <h1 class="text-2xl font-bold mb-4 text-pink-600">
+    <h1 class="text-2xl font-bold mb-6 text-pink-600">
       Rimjhim... will you be my Valentine? 💖
     </h1>
-
-    <p class="text-gray-600 mb-6 text-sm">
-      I may not always be the most talkative person…  
-      but I promise I will always try my best  
-      to comfort you, support you,  
-      and make your life as beautiful as possible 🌸
-    </p>
 
     <div class="flex justify-center gap-6 relative h-16">
       <button id="yesBtn"
@@ -49,7 +40,7 @@
     const mainCard = document.getElementById("mainCard");
     const gif = document.getElementById("gif");
 
-    // Move "No" button
+    // Move No button
     noBtn.addEventListener("mouseover", () => {
       const x = Math.floor(Math.random() * 250) - 125;
       const y = Math.floor(Math.random() * 150) - 75;
@@ -59,10 +50,10 @@
     // If she clicks No
     noBtn.addEventListener("click", () => {
       gif.src = "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif";
-      mainCard.querySelector("h1").innerText = "Are you sure, Rimjhim? 🥺";
+      mainCard.querySelector("h1").innerText = "Are you really sure? 🥺";
     });
 
-    // If she clicks Yes
+    // When she clicks Yes → THEN message appears
     yesBtn.addEventListener("click", () => {
       document.body.classList.remove("bg-pink-100");
       document.body.classList.add("bg-pink-200");
@@ -71,12 +62,13 @@
         <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
              class="w-48 mx-auto mb-6 rounded-xl">
         <h1 class="text-3xl font-bold text-pink-600 mb-4">
-          You just made me the happiest person 💕
+          You said YES 😭💖
         </h1>
-        <p class="text-lg text-gray-700">
-          I promise I’ll keep trying every day  
-          to make you smile,  
-          even if I’m not the most communicative guy 😌💖
+        <p class="text-lg text-gray-700 leading-relaxed">
+          I may not always be the most communicative person…  
+          but I promise I’ll always try my best  
+          to comfort you, support you,  
+          and make your life as beautiful as possible 🌸
         </p>
       `;
     });
